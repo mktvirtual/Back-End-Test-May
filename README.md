@@ -31,4 +31,6 @@ Lembre-se, você pode criar a estrutura do zero, com ou sem o Composer ;)
 
 Se você ainda não passou pela fase de entrevista, cadastre seu [currículo aqui!](http://www.mktvirtual.com.br/carreira/)
 
+* Faça um pull request até a data estipulada.
+
 #### Estamos torcendo por você!
