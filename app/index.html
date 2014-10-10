@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>teste backend</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style/default.css" />
+</head>
+<body>
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '731674580203051',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.1' // use version 2.1
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+      //redirect para a home
+      //top.location.href="home.php";
+
+      listPhotos(response.id);
+
+      document.getElementById('login').style.display = "block";
+
+      var contentMenu = '<img id="photo-profile" src="http://graph.facebook.com/' + response.id + '/picture" /><br/><div class="option" onclick="listPhotos('+ response.id +')">' + response.name + ' - profile</div>';
+      
+      contentMenu += '<div id="new_photo" class="option" onclick="uploadPhoto('+ response.id +')">New Photo</div>';
+      
+
+      document.getElementById('login').innerHTML = contentMenu;
+    });
+  }
+
+function listPhotos(data){
+  request = new XMLHttpRequest();
+  request.open('GET', '/recoverPhotos.php?id=' + data, true);
+
+  request.onload = function() 
+  {
+    if (request.status >= 200 && request.status < 400)
+    {      
+      // success
+      resp = request.responseText;
+      obj = JSON.parse(resp);
+
+      if(obj['message'] !== 'No photos' && obj['success'] == true){
+
+        var images ="";
+
+        obj['content'].forEach(function(entry) {
+          //console.log(entry);
+          new_entry = entry.replace('-thumb', '');
+          images += "<a href='usersPhotos/" + data + "/" + new_entry + "' target='_blank'><img class='photo' src='usersPhotos/" + data + "/" + entry + "'></a>";
+        });
+
+        document.getElementById('content').innerHTML = images;
+      }
+      else
+      {
+        document.getElementById('content').innerHTML = "<span>Sem imagens para exibir</span>";
+      }
+      
+    
+    } else {
+      // COLOCAR MENSAGEM DE ERRO QUANDO A REQUISIÇÃO FALHAR
+    }
+
+  };
+
+  request.send();
+
+}
+
+
+function uploadPhoto(data){
+  document.getElementById('content').innerHTML = "<form enctype='multipart/form-data' action='/uploadPhoto.php?id="+data+"' method='post'><label for='file'>Filename:</label><input  id='file' name='file' type='file' /><input type='submit' name='submit' value='Submit'></form>";
+}
+
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<!-- LOGO/HEADER -->
+<div class="logo">
+  <img id="logo" src="images/instacopy.png" alt="instacopy logo"/>
+</div>
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+<div id="menu">
+  <div id="login">
+  </div>
+  
+</div>
+
+<div id="content">
+  
+</div>
+
+</body>
+</html>
