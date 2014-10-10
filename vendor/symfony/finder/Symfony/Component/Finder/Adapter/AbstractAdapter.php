@@ -33,11 +33,12 @@ abstract class AbstractAdapter implements AdapterInterface
     protected $sort        = false;
     protected $paths       = array();
     protected $notPaths    = array();
+    protected $ignoreUnreadableDirs = false;
 
     private static $areSupported = array();
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isSupported()
     {
@@ -211,6 +212,16 @@ abstract class AbstractAdapter implements AdapterInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function ignoreUnreadableDirs($ignore = true)
+    {
+        $this->ignoreUnreadableDirs = (bool) $ignore;
+
+        return $this;
+    }
+
+    /**
      * Returns whether the adapter is supported in the current environment.
      *
      * This method should be implemented in all adapters. Do not implement
@@ -219,7 +230,7 @@ abstract class AbstractAdapter implements AdapterInterface
      *
      * @see isSupported
      *
-     * @return Boolean Whether the adapter is supported
+     * @return bool    Whether the adapter is supported
      */
     abstract protected function canBeUsed();
 }
