@@ -17,14 +17,14 @@ namespace Symfony\Component\Finder\Adapter;
 interface AdapterInterface
 {
     /**
-     * @param Boolean $followLinks
+     * @param bool    $followLinks
      *
      * @return AdapterInterface Current instance
      */
     public function setFollowLinks($followLinks);
 
     /**
-     * @param integer $mode
+     * @param int     $mode
      *
      * @return AdapterInterface Current instance
      */
@@ -94,7 +94,7 @@ interface AdapterInterface
     public function setFilters(array $filters);
 
     /**
-     * @param \Closure|integer $sort
+     * @param \Closure|int     $sort
      *
      * @return AdapterInterface Current instance
      */
@@ -115,6 +115,13 @@ interface AdapterInterface
     public function setNotPath(array $notPaths);
 
     /**
+     * @param bool    $ignore
+     *
+     * @return AdapterInterface Current instance
+     */
+    public function ignoreUnreadableDirs($ignore = true);
+
+    /**
      * @param string $dir
      *
      * @return \Iterator Result iterator
@@ -124,7 +131,7 @@ interface AdapterInterface
     /**
      * Tests adapter support for current platform.
      *
-     * @return Boolean
+     * @return bool
      */
     public function isSupported();
 

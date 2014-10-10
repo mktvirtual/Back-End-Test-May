@@ -54,7 +54,7 @@ class GnuFindAdapter extends AbstractFindAdapter
                 $format = '%T@';
                 break;
             default:
-                throw new \InvalidArgumentException('Unknown sort options: '.$sort.'.');
+                throw new \InvalidArgumentException(sprintf('Unknown sort options: %s.', $sort));
         }
 
         $command
@@ -80,7 +80,7 @@ class GnuFindAdapter extends AbstractFindAdapter
      */
     protected function buildFindCommand(Command $command, $dir)
     {
-      return parent::buildFindCommand($command, $dir)->add('-regextype posix-extended');
+        return parent::buildFindCommand($command, $dir)->add('-regextype posix-extended');
     }
 
     /**

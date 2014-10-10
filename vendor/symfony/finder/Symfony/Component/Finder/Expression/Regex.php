@@ -65,7 +65,11 @@ class Regex implements ValueInterface
             $start = substr($m[1], 0, 1);
             $end   = substr($m[1], -1);
 
-            if (($start === $end && !preg_match('/[*?[:alnum:] \\\\]/', $start)) || ($start === '{' && $end === '}')) {
+            if (
+                ($start === $end && !preg_match('/[*?[:alnum:] \\\\]/', $start))
+                || ($start === '{' && $end === '}')
+                || ($start === '(' && $end === ')')
+            ) {
                 return new self(substr($m[1], 1, -1), $m[2], $end);
             }
         }
@@ -174,7 +178,7 @@ class Regex implements ValueInterface
     public function addOption($option)
     {
         if (!$this->hasOption($option)) {
-            $this->options.= $option;
+            $this->options .= $option;
         }
 
         return $this;

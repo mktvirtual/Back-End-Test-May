@@ -1,21 +1,32 @@
 {
-	"name": "mktvirtual/TrabalheNaMktVirtual-BackEnd",
-	"description": "TrabalheNaMktVirtual-BackEnd",
-	"version": "0.0.1",
-	"authors": [
-		{
-			"name": "Mkt Virtual",
-			"email": "mktvirtual@mktvirtual.com.br",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"facebook/php-sdk": "3.2.*",
-		"EHER/PHPUnit": ">=1.2"
-	},
-	"autoload": {
-		"classmap": [
-			"app/"
-		]
-	}
+    "name": "skape/insta-mkt",
+    "authors": [
+        {
+            "name": "Renato Neto",
+            "email": "skapemr@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "4.2.*",
+        "illuminate/config": "4.2.*",
+        "illuminate/auth": "4.2.*",
+        "illuminate/validation": "4.2.*",
+        "symfony/routing": "2.5",
+        "symfony/config": "2.5",
+        "symfony/templating": "2.5",
+        "symfony/http-kernel": "2.5",
+        "symfony/http-foundation": "2.5",
+        "forxer/gravatar": "dev-master",
+        "intervention/image": "2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "app/controllers",
+            "app/models"
+        ],
+        "psr-0": {
+            "Skp": "library/"
+        },
+        "files": ["library/Skp/Support/helpers.php"]
+    }
 }
