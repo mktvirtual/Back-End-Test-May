@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+#conteudo h1 {
+	font-size:240%;
+	margin-bottom:1rem;
+}
+
+	#conteudo h1 > span,
+	#conteudo p > strong {
+		font-family:'Lobster', sans-serif;
+		color:#f07818;
+		font-weight:normal;
+	}
+
+#conteudo p {
+	font-size:150%;
+	margin-bottom:1em;
+}
+
+#conteudo a {
+	color:#f07818;
+	text-decoration: none;
+}
+
+	#conteudo a:hover {
+		text-decoration: underline;
+	}
+
+/* Minha Conta */
+
+#userInfo #imgHolder {
+	width:21%;
+}
+
+	#userInfo #imgHolder img {
+		max-width: 100%;
+		border:2px solid #fff;
+		box-shadow:0px 1px 2px rgba(0,0,0,0.4);
+	}
+
+#followInfo {
+	width:40%;
+	margin-left:5%;
+	margin-top:3em;
+}
+
+#followInfo > div {
+	float:left;
+	text-align: center;
+	font-size:240%;
+	margin:0 3% 0.5em;
+}
+
+#followInfo > div:first-child {
+	margin-left:6%;
+}
+
+	#followInfo > div span {
+		display:block;
+		font-size:55%;
+	}
+
+#followInfo > form {
+	display:block;
+}
+
+	#followInfo > form .btnCinza {
+		background:#b5b1b0;
+		font-family: 'francophil_bold', sans-serif;
+		text-transform:uppercase;
+		font-size:160%;
+		padding:0 15px;
+		display:inline-block;
+		height:45px;
+		line-height:45px;
+		color:#33322d;
+		border-radius:5px;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	#followInfo > form #enviarFoto {
+		display:none;
+	}
+
+#userNameDesc {
+	width:100%;
+	margin-top:1.5em;
+}
+
+	#userNameDesc > h1 {
+		font-size:200%;
+	}
+
+	#userNameDesc > p {
+		font-size:120%;
+	}
+
+#photoFeed,
+#photoFeed ul {
+	width:930px;
+}
+
+	#photoFeed ul li {
+		width:300px;
+		height:300px;
+		float:left;
+		margin:2px;
+		border:2px solid #fff;
+		box-shadow:0px 1px 2px rgba(0,0,0,0.4);
+	}
+
+		#photoFeed ul li img {
+			max-width: 100%;
+		}
+
+	#photoFeed .alerta {
+		color:#F07818;
+		font-size:120%;
+	}
+
+
+/* Página de envio de fotos */
+
+.jcrop-holder {
+	margin-bottom:1em;
+	max-height:500px;
+	max-width:980px;
+}
