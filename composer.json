@@ -1,21 +1,17 @@
 {
 	"name": "mktvirtual/TrabalheNaMktVirtual-BackEnd",
 	"description": "TrabalheNaMktVirtual-BackEnd",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"authors": [
 		{
-			"name": "Mkt Virtual",
-			"email": "mktvirtual@mktvirtual.com.br",
+			"name": "Marcelo Augusto",
+			"email": "maajunior113@gmail.com",
 			"role": "Developer"
 		}
 	],
 	"require": {
-		"facebook/php-sdk": "3.2.*",
-		"EHER/PHPUnit": ">=1.2"
-	},
-	"autoload": {
-		"classmap": [
-			"app/"
-		]
+		"facebook/php-sdk-v4": "4.0.*"
+		, "phpunit/phpunit": "4.6.*@dev"
 	}
 }
+
