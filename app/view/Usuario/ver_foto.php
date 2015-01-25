@@ -1,0 +1,1 @@
+<img src="/Imagem/imagem?id=<?php echo $foto; ?>" />
