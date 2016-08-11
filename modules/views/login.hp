@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xml:lang="pt-br" lang="pt-br" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="https://opengraph.org/schema/" ng-app="login">
+<head>
+<meta charset="utf-8">
+<title>Hoje Promete - Gerencie suas fotos</title>
+<meta content='O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.' name='description'>
+<meta name="author" content="Hoje Promete">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- mobile prevent scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS meta -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no">
+<!-- iOS icon for web app -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon.png?v=0.1" />
+<!-- twitter and facebook tags, #Change description and image -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hoje_promete">
+<meta name="twitter:title" content="Hoje Promete - Aproveite o dia">
+<meta name="twitter:description" content="O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.">
+<meta name="twitter:image:src" content="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon.png?v=0.2">
+<meta name="twitter:domain" content="hojepromete.com.br">
+<!-- Favicon -->
+<link id="favicon" rel="icon" type="image/png" href="http://www.hojepromete.com.br/img/icons/favicon.png?v=3" />
+<!-- SEO -->
+<meta name="fragment" content="!">
+<meta name="keywords" content="hoje promete, eventos, promoções, conheça, sugestões, indicações, hoje, promete, caper dien, clube social" />
+<meta name="robots" content="index,follow" />
+<meta id="fb-title" property="og:title" content="HojePromete"/>
+<meta id="fb-image" property="og:image" content="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon_sq.png"/>
+<meta id="fb-url" property="og:url" content="http://www.hojepromete.com.br">
+<meta property="og:title" content="Hoje Promete - Aproveite o dia">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.hojepromete.com.br/" />
+<meta property="og:image" content="http://www.hojepromete.com.br/img/logo.png">
+<meta property="og:site_name" content="hojepromete.com.br"/>
+<meta property="og:description" content="O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="apple-touch-icon" href="http://www.hojepromete.com.br/img/icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.hojepromete.com.br/img/icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.hojepromete.com.br/img/icon-iphone4.png" />
+<!-- Bootstrap -->
+<link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link href="http://hojepromete.com.br/css/style.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="http://hojepromete.com.br/css/default.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="http://hojepromete.com.br/css/default/index.css" media="screen" rel="stylesheet" type="text/css" >
+<script src="/angular/angular.js"></script>
+<script>
+	angular.module("login", []);
+	angular.module("login").controller("loginCtrl", function ($scope) {
+		$scope.app = "Hoje Promete, aproveite o dia";
+	});
+</script>
+<style type="text/css">
+#register{margin:10px 0}
+.content_top{padding-top:50px}
+.content p, .content h2 {font-family: Arial!important;}
+#register .form-control {margin:10px 0}
+.reg-footer{height:0!important}
+.sbt-1{background-position-y: -5px!important;}
+.sbt-2{background-position-y: -93px!important;}
+</style>
+</head>
+<body>
+<div class="block bl1 parallax-background fixed">
+<div ng-controller="loginCtrl" class="row content content_top container" style="width: 1020px;margin:0 auto;min-height: 700px;">
+	<div class="col-sm-6 text">
+		<h2 class="principal">Poste suas fotos</h2>
+		<p>Entre para o clube que mais cresce no Brasil, saiba tudo o que têm para hoje, afinal, Hoje Promete!</p>
+		<p align="center"><a href="https://www.facebook.com/dialog/oauth?client_id=240477552773562&amp;redirect_uri=http%3A%2F%2Fbeta.hojepromete.com.br%2F&amp;state=fd00569b95b87a449ce20e33bf4de7b4&amp;redirect_url=http%3A%2F%2Fwww.hojepromete.com.br%2F&amp;scope=user_status%2Cuser_photos%2Cemail%2Cuser_birthday%2Cuser_location%2Cfriends_photos%2Cuser_events%2C+friends_events" onclick="javascript:fb_login();return false;" id="fb1">conecte-se com facebook</a></p>
+		<p class="minus">* uso totalmente seguro, não guardamos suas informações e não postamos nada em sua linha do tempo sem a sua autorização.</p>
+		<p class="checkbox">
+		Em clicar em cadastrar ou conectar com o facebook concordo com os <a href="termos-de-uso" style="color:yellow" target="_blank">Termos de uso</a> e <a style="color:yellow" href="politica-de-privacidade" target="_blank">Política de privacidade</a> do Hoje Promete
+		</p>		
+	</div>
+	<div class="col-lg-6" id="register" style="margin:0 20px;float:right">
+		<h1 class="logo" style="text-align:center;margin:0 28px"><a title="www.hojepromete.com.br" id="logoTitle" href="/">{{app}}</a></h1>
+		<h2 style="font-size:16px;line-height:18px;text-align:center">Cadastre-se para ver fotos e vídeos dos seus amigos.</h2>
+		<form method="post" action="" class="form register" id="reg">
+		<input class="form-control" type="text" name="register[email]" ng-model="email" placeholder="Email" required>
+		<input class="form-control" type="text" name="register[name]" ng-model="name" placeholder="Nome completo" required>
+		<input class="form-control" type="text" name="register[username]" ng-model="username" placeholder="Nome de usuário" required>
+		<input class="form-control" type="text" name="register[password]" ng-model="password" placeholder="Senha" required>
+		<div style="text-align:center;border-bottom:1px solid #777;margin:2px 0;padding:2px 0">
+		<input type="submit" name="submit" class="sbt-1" id="submit" value="Cadastrar" style="margin:0 auto;">
+		</div>
+		<span><a href="https://www.facebook.com/dialog/oauth?client_id=240477552773562&amp;redirect_uri=http%3A%2F%2Fbeta.hojepromete.com.br%2F&amp;state=fd00569b95b87a449ce20e33bf4de7b4&amp;redirect_url=http%3A%2F%2Fwww.hojepromete.com.br%2F&amp;scope=user_status%2Cuser_photos%2Cemail%2Cuser_birthday%2Cuser_location%2Cfriends_photos%2Cuser_events%2C+friends_events" onclick="javascript:fb_login();return false;" id="fb2">conecte-se com facebook</a></span>
+		</form>
+
+		<form method="post" action="" class="form login" id="reg" style="display:none">
+		<input class="form-control" type="text" name="register[username]" ng-model="username" placeholder="Nome de usuário" required>
+		<input class="form-control" type="text" name="register[password]" ng-model="password" placeholder="Senha" required>
+		<div style="text-align:center;border-bottom:1px solid #777;margin:2px 0;padding:2px 0">
+		<input type="submit" name="submit" class="sbt-2" id="submit" value="Entrar" style="margin:0 auto;">
+		</div>
+		<span><a href="https://www.facebook.com/dialog/oauth?client_id=240477552773562&amp;redirect_uri=http%3A%2F%2Fhojepromete.com.br%2F&amp;state=fd00569b95b87a449ce20e33bf4de7b4&amp;redirect_url=http%3A%2F%2Fwww.hojepromete.com.br%2F&amp;scope=user_status%2Cuser_photos%2Cemail%2Cuser_birthday%2Cuser_location%2Cfriends_photos%2Cuser_events%2C+friends_events" onclick="javascript:fb_login();return false;" id="fb2">conecte-se com facebook</a></span>
+		</form>
+
+		<div class="reg-footer">
+			<span class="checkbox" style="line-height:14px">
+			Em clicar em cadastrar ou conectar com o facebook concordo com os 
+			<a style="line-height:14px;color:yellow" href="termos-de-uso" target="_blank">Termos de uso</a> e <a style="line-height:14px;color:yellow" href="politica-de-privacidade" target="_blank">Política de privacidade</a> do Hoje Promete
+			</span>											
+			<span style="width:100%;float:left;height:30px;line-height:30px;border-top:1px solid #777">
+			Tem uma conta? <a href="javascript:void(0)" onclick="showLogin()" id="sl">Faça login</a>
+			</span>
+		</div>
+	</div>
+
+</div>
+</div>
+<footer style="position:fixed;bottom:0">
+<div id="bottom">
+	<div class="content" style="width: 1020px;">
+	<h2 class="logo_footer"></h2>
+	<div class="col">
+		<div class="footer-link"><a href="/sobre">Sobre</a></div>
+		<div class="footer-link"><a href="/faq">FAQ</a></div>
+		<div class="footer-link"><a href="/contato">Fale conosco</a></div>
+	</div>
+	<a href="https://www.facebook.com/hojepromete" target="_blank" id="likeFB"><img src="http://hojepromete.com.br/img/like-fb.jpg" alt="Curta no facebook"></a>
+    </div>
+</div>
+</footer>
+<script src="/jquery/dist/jquery.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/js/login.js"></script>
+<script type="text/javascript" src="http://hojepromete.com.br/js/default.js"></script>
+<script type="text/javascript" src="http://hojepromete.com.br/js/default/index.js"></script>
+<script type="text/javascript">
+function showLogin(){
+	if($("#reg.register").css("display") != "none"){
+		$("#reg.register").hide();
+		$("#reg.login").show();
+		$("#sl").text("Cadastre-se");
+	}else{
+		$("#reg.login").hide();
+		$("#reg.register").show();
+		$("#sl").text("Faça login");
+	}
+};
+</script>
+</body>
+</html>
