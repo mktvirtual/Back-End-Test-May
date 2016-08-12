@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xml:lang="pt-br" lang="pt-br" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="https://opengraph.org/schema/">
+<head>
+<meta charset="utf-8">
+<title>Hoje Promete - Gerencie suas fotos</title>
+<meta content='O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.' name='description'>
+<meta name="author" content="Hoje Promete">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- mobile prevent scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- iOS meta -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no">
+<!-- iOS icon for web app -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon.png?v=0.1" />
+<!-- twitter and facebook tags, #Change description and image -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hoje_promete">
+<meta name="twitter:title" content="Hoje Promete - Aproveite o dia">
+<meta name="twitter:description" content="O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.">
+<meta name="twitter:image:src" content="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon.png?v=0.2">
+<meta name="twitter:domain" content="hojepromete.com.br">
+<!-- Favicon -->
+<link id="favicon" rel="icon" type="image/png" href="http://www.hojepromete.com.br/img/icons/favicon.png?v=3" />
+<!-- SEO -->
+<meta name="fragment" content="!">
+<meta name="keywords" content="hoje promete, eventos, promoções, conheça, sugestões, indicações, hoje, promete, caper dien, clube social" />
+<meta name="robots" content="index,follow" />
+<meta id="fb-title" property="og:title" content="HojePromete"/>
+<meta id="fb-image" property="og:image" content="http://www.hojepromete.com.br/img/icons/HojePrometeSocialIcon_sq.png"/>
+<meta id="fb-url" property="og:url" content="http://www.hojepromete.com.br">
+<meta property="og:title" content="Hoje Promete - Aproveite o dia">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://www.hojepromete.com.br/" />
+<meta property="og:image" content="http://www.hojepromete.com.br/img/logo.png">
+<meta property="og:site_name" content="hojepromete.com.br"/>
+<meta property="og:description" content="O Hoje Promete é uma plataforma de divulgação de produtos, eventos e serviços de uma forma nunca vista anteriormente. Disponível para iPhone, Android e outros dispositivos móveis.">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="apple-touch-icon" href="http://www.hojepromete.com.br/img/icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.hojepromete.com.br/img/icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.hojepromete.com.br/img/icon-iphone4.png" />
+<!-- Bootstrap -->
+<link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<?php echo $this->value;?>
+
+<script src="/jquery/dist/jquery.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/angular/angular.js"></script>
+</body>
+</html>
