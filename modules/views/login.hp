@@ -61,6 +61,8 @@
 .reg-footer{height:0!important}
 .sbt-1{background-position-y: -5px!important;}
 .sbt-2{background-position-y: -93px!important;}
+#sl{color:#fff;font-weight:bold}
+#sl:hover{color:yellow}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@
 	<div class="col-sm-6 text">
 		<h2 class="principal">Poste suas fotos</h2>
 		<p>Entre para o clube que mais cresce no Brasil, saiba tudo o que têm para hoje, afinal, Hoje Promete!</p>
-		<p align="center"><a href="https://www.facebook.com/dialog/oauth?client_id=240477552773562&amp;redirect_uri=http%3A%2F%2Fbeta.hojepromete.com.br%2F&amp;state=fd00569b95b87a449ce20e33bf4de7b4&amp;redirect_url=http%3A%2F%2Fwww.hojepromete.com.br%2F&amp;scope=user_status%2Cuser_photos%2Cemail%2Cuser_birthday%2Cuser_location%2Cfriends_photos%2Cuser_events%2C+friends_events" onclick="javascript:fb_login();return false;" id="fb1">conecte-se com facebook</a></p>
+		<p align="center"><a href="<?=$this->fb;?>" onclick="javascript:fb_login();return false;" id="fb1">conecte-se com facebook</a></p>
 		<p class="minus">* uso totalmente seguro, não guardamos suas informações e não postamos nada em sua linha do tempo sem a sua autorização.</p>
 		<p class="checkbox">
 		Em clicar em cadastrar ou conectar com o facebook concordo com os <a href="termos-de-uso" style="color:yellow" target="_blank">Termos de uso</a> e <a style="color:yellow" href="politica-de-privacidade" target="_blank">Política de privacidade</a> do Hoje Promete
@@ -79,19 +81,19 @@
 		<h1 class="logo" style="text-align:center;margin:0 28px"><a title="www.hojepromete.com.br" id="logoTitle" href="/">{{app}}</a></h1>
 		<h2 style="font-size:16px;line-height:18px;text-align:center">Cadastre-se para ver fotos e vídeos dos seus amigos.</h2>
 		<form method="post" action="" class="form register" id="reg">
-		<input class="form-control" type="text" name="register[email]" ng-model="email" placeholder="Email" required>
+		<input class="form-control" type="email" name="register[email]" ng-model="email" placeholder="Email" required>
 		<input class="form-control" type="text" name="register[name]" ng-model="name" placeholder="Nome completo" required>
 		<input class="form-control" type="text" name="register[username]" ng-model="username" placeholder="Nome de usuário" required>
-		<input class="form-control" type="text" name="register[password]" ng-model="password" placeholder="Senha" required>
+		<input class="form-control" type="password" name="register[password]" ng-model="password" placeholder="Senha" required>
 		<div style="text-align:center;border-bottom:1px solid #777;margin:2px 0;padding:2px 0">
 		<input type="submit" name="submit" class="sbt-1" id="submit" value="Cadastrar" style="margin:0 auto;">
 		</div>
-		<span><a href="https://www.facebook.com/dialog/oauth?client_id=240477552773562&amp;redirect_uri=http%3A%2F%2Fbeta.hojepromete.com.br%2F&amp;state=fd00569b95b87a449ce20e33bf4de7b4&amp;redirect_url=http%3A%2F%2Fwww.hojepromete.com.br%2F&amp;scope=user_status%2Cuser_photos%2Cemail%2Cuser_birthday%2Cuser_location%2Cfriends_photos%2Cuser_events%2C+friends_events" onclick="javascript:fb_login();return false;" id="fb2">conecte-se com facebook</a></span>
+		<span><a href="<?=$this->fb;?>" onclick="javascript:fb_login();return false;" id="fb2">conecte-se com facebook</a></span>
 		</form>
 
 		<form method="post" action="" class="form login" id="reg" style="display:none">
-		<input class="form-control" type="text" name="register[username]" ng-model="username" placeholder="Nome de usuário" required>
-		<input class="form-control" type="text" name="register[password]" ng-model="password" placeholder="Senha" required>
+		<input class="form-control" type="text" name="login[username]" ng-model="username" placeholder="Nome de usuário" required>
+		<input class="form-control" type="password" name="login[password]" ng-model="password" placeholder="Senha" required>
 		<div style="text-align:center;border-bottom:1px solid #777;margin:2px 0;padding:2px 0">
 		<input type="submit" name="submit" class="sbt-2" id="submit" value="Entrar" style="margin:0 auto;">
 		</div>
@@ -142,5 +144,7 @@ function showLogin(){
 	}
 };
 </script>
+
+<div id="fb-root"></div><script>window.fbAsyncInit=function(){FB.init({appId:'240477552773562',cookie:true,xfbml:true,oauth:true,status:false});FB.Event.subscribe('auth.login',function(response){window.location.href='http://beta.hojepromete.com.br/login/';});FB.Event.subscribe('auth.logout',function(response){window.location.href='http://beta.hojepromete.com.br/login/';});};function fb_login(){FB.login(function(response){},{scope:'email'});}(function(){var e=document.createElement('script');e.async=true;e.src=document.location.protocol+'//connect.facebook.net/en_US/all.js';document.getElementById('fb-root').appendChild(e);}());</script>
 </body>
 </html>

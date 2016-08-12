@@ -29,5 +29,6 @@ function resolveDependencies(){
 	require_once APPLICATION_PATH . "/models/Profile.php";
 	require_once APPLICATION_PATH . "/Model.php";
 	require_once APPLICATION_PATH . "/Database.php";
+	require_once APPLICATION_PATH . "/../vendor/facebook/php-sdk/src/facebook.php";
 }
 ?>

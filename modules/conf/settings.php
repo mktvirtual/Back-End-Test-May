@@ -8,7 +8,7 @@ return array(
 	"app_name" => "Hoje Promete",
 	"app_db" => array(
 		"host" => "localhost",
-		"user" => "hojeproete",
+		"user" => "hojepromete",
 		"password" => "220585",
 		"db" => "beta_hojepromete"
 	),
