@@ -1,0 +1,257 @@
+@import "bootstrap.min.css";
+
+@import 'https://fonts.googleapis.com/css?family=Lobster';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+h1{
+    font-family: "Lobster";
+}
+
+.login-page .box{
+    border-radius: 4px;
+    border: solid 1px lightgray;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.login-page .form-group input{
+    width: 100%;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: solid 1px lightgray;
+    margin-bottom: 20px;
+}
+
+.login-page .form-group input.error{
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.login-page .form-group .btn{
+    width: 100%;
+}
+
+header{
+    border-bottom: 1px solid lightgray;
+}
+
+header h1{
+    margin: 10px 0;
+}
+
+header h1 .glyphicon{
+    float: left;
+    margin: 2px 15px 0 0;
+}
+
+header .menu{
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+header .menu li{
+    display: inline-block;    
+    padding: 0 20px;
+}
+
+header .menu li .glyphicon{
+    font-size: 2.5rem;    
+    color: lightslategray;
+}
+
+.content{
+    max-width: 630px;
+}
+
+.content .panel{
+    margin-top: 60px;
+}
+
+.share-form label{
+    width: 100%;
+    background: threedhighlight;
+    margin: 0;    
+    font-size: 1.725rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.share-form label .select{
+    padding: 40px;
+}
+
+.share-form label .preview{
+    width: 100%;
+}
+
+.share-form label .glyphicon{
+    font-size: 20rem;
+}
+
+.share-form textarea{
+    width: 100%;
+    border: none;
+    border-top: 1px solid lightgray;    
+    line-height: 150%;
+    padding: 10px;
+}
+
+.post img{
+    width: 100%;    
+}
+
+.perfil-form{
+    margin-top: 20px;
+}
+
+.profile-info{
+    margin: 60px 0;
+}
+
+.profile-info h2{
+    font-size: 4.725rem;
+}
+
+.profile-info .counters{
+    font-size: 1.8rem;
+}
+
+.profile-image{
+    height: 150px;
+    margin: 0 auto;
+}
+
+.profile-image-mini,
+.post-page .profile-image-mini{
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+}
+
+.posts{
+    margin: 60px 0;
+}
+
+.posts .post{
+    margin: 20px 0;
+    position: relative;
+}
+
+.posts .post .post-stats{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 30px);    
+    height: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+
+    font-size: 1.8rem;
+    line-height: 360px;
+}
+
+.posts .post a:hover .post-stats{
+    display: block;
+}
+
+
+.posts .post .post-stats .glyphicon{
+    font-size: 3rem;
+}
+
+.posts .post .post-stats .post-counter{
+    padding: 0 10px;
+}
+
+.post-page .modal-dialog{
+    width: 1140px;
+    max-width: calc(100% - 80px);
+}
+
+.post-page .modal-dialog .modal-content{
+    border-radius: 0;
+    border: none;
+}
+
+.post-page img{
+    width: 100%;
+}
+
+.post-page .modal-body{
+    padding: 0;
+}
+
+.post-page h2{
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.post-page .curtidas{
+    padding: 20px 0;
+}
+
+.post-page .comentarios{
+    
+}
+
+.post-page .comentario{
+    margin-bottom: 20px;
+}
+
+.post-page .curtir{
+    font-size: 3rem;
+}
+
+.post-page .comentar textarea{
+    border: none;
+    width: 100%;
+    line-height: 150%;
+    font-size: 1.8rem;
+}
+
+.autores .profile-image-mini{
+    width: 38px;
+    height: 38px;
+}
+
+.autores h2{
+    margin: 0 0 0 10px;
+    font-size: 1.8rem;
+    line-height: 3.8rem;
+}
+
+.autores h2 a{
+    color: #333;
+}
+
+.autores .autor-posts{
+    margin: 20px 0;
+}
+
+.autores .autor-posts .col-sm-4{
+    padding: 0;
+}
+
+.autores .panel-body{
+    border-bottom: solid 1px rgb(221, 221, 211);
+}
+
+.autores .no-posts{
+    padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .login-page{
+        margin-top: 120px;
+    }
+    
+    .post-page{
+        margin-top: 240px;
+        margin-top: 10%;
+    }
+}
