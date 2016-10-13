@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Instafake</title>
+
+        <!-- Bootstrap -->
+        <link href="public/css/styles.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>
+                            <i class="glyphicon glyphicon-camera"></i>
+                            | Instafake
+                        </h1>
+                    </div>                    
+                    <div class="col-sm-6 text-right">
+                        <ul class="menu">
+                            <li><a href="<?= site_url(); ?>" title="Home"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li><a href="<?= make_url('usuario/perfil'); ?>" title="Perfil"><i class="glyphicon glyphicon-user"></i></a></li>
+                            <li><a href="<?= make_url('usuario/logout'); ?>" title="Sair"><i class="glyphicon glyphicon-log-out"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </header>
+
+        <div class="container content">
+            <div class="row">
+                <?php if ($autores): ?>
+                    <div class="panel panel-default post">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    Encontre outras pessoas
+                                </div>
+                            </div>
+                        </div>
+                        <div class="autores">
+                            <?php if ($autores): ?>
+                                <?php foreach ($autores as $autor): ?>
+                                    <div class="panel-body">
+                                        <div class="row autor-info">
+                                            <div class="col-xs-12">
+                                                <img src="<?= make_url('public/images/default-profile.png'); ?>" alt="Post" class="img-circle profile-image-mini pull-left" />                                    
+                                                <h2 class="pull-left">
+                                                    <a href="<?= make_url('usuario/perfil?u=' . $autor->id) ?>">
+                                                        <?= $autor->nome ?>
+                                                    </a>
+                                                </h2>
+                                                <button class="btn btn-default pull-right" title="Apenas marcação">seguir</button>
+                                            </div>
+                                        </div>
+                                        <div class="row autor-posts">
+
+                                            <?php if ($autor->posts): ?>
+                                                <?php foreach ($autor->posts as $post): ?>
+                                                    <div class="col-sm-4">
+                                                        <img src="<?= make_url('image/thumb?f=' . $post->foto) ?>" alt="<?= $post->descricao; ?>" class="img-responsive" />
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            <?php else: ?>
+                                                <div class="col-xs-12 no-posts text-center">
+                                                    Ainda não há publicações
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>                            
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="<?= make_url('public/js/bootstrap.min.js'); ?>"></script>        
+    </body>
+</html>
