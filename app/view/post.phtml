@@ -1,0 +1,52 @@
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<div class="row">
+    <div class="col-sm-8">
+        <img src="<?= make_url($post->foto) ?>" alt="<?= $post->descricao; ?>" class="img-responsive post-page-image" />
+    </div>
+
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-xs-2 text-center">
+                <img src="<?= make_url('public/images/default-profile.png'); ?>" class="img-circle img-responsive profile-image-mini" alt="<?= $post->autor->nome ?>"/>
+            </div>
+            <div class="col-xs-10">
+                <h2>
+                    <?= $post->autor->nome ?> 
+                    <?php if (!$current_user): ?>
+                        <button title="marcação" class="btn btn-default">seguir</button>
+                    <?php endif; ?>
+                </h2>
+            </div>
+        </div>
+        <div class="row curtidas">
+            <div class="col-xs-12">
+                <?= $post->curtidas_count ?> curtiram
+            </div>
+        </div>
+
+        <div class="row comentarios">
+            <div class="col-xs-12 comentario">
+                <strong><?= $post->autor->nome ?></strong> <?= $post->descricao; ?>
+            </div>
+
+            <?php if ($post->comentarios): ?>
+                <?php foreach ($post->comentarios as $comentario): ?>
+                    <div class="col-xs-12 comentario">
+                        <strong><?= $comentario->autor->nome ?> <?= $comentario->descricao; ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
+        <div class="row interacoes">
+            <div class="col-xs-2 curtir text-center">
+                <i class="glyphicon glyphicon-heart-empty curtir" data-post="<?= $post->id ?>"></i>
+            </div>
+            <div class="col-xs-10 comentar">
+                <form id="comentario">
+                    <textarea disabled="disabled" name="comentario" placeholder="Adicione um comentário..."></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
