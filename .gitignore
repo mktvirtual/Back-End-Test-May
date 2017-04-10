@@ -1,1 +1,5 @@
-composer.phar
+/vendor/
+/public/uploads/
+/config.php
+/database.php
+

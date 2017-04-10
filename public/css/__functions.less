@@ -1,0 +1,120 @@
+.text-shadow(@textshadow) {
+    text-shadow: @textshadow;
+    -o-text-shadow: @textshadow;
+    -ms-text-shadow: @textshadow;
+    -moz-text-shadow: @textshadow;
+    -webkit-text-shadow: @textshadow;
+}
+.border-radius(@radius) {
+    border-radius: @radius;
+    -o-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.border-top-left-radius(@radius) {
+    border-top-left-radius: @radius;
+    -o-border-top-left-radius: @radius;
+    -ms-border-top-left-radius: @radius;
+    -moz-border-top-left-radius: @radius;
+    -webkit-border-top-left-radius: @radius;
+}
+.border-top-right-radius(@radius) {
+    border-top-right-radius: @radius;
+    -o-border-top-right-radius: @radius;
+    -ms-border-top-right-radius: @radius;
+    -moz-border-top-right-radius: @radius;
+    -webkit-border-top-right-radius: @radius;
+}
+.border-bottom-left-radius(@radius) {
+    border-bottom-left-radius: @radius;
+    -o-border-bottom-left-radius: @radius;
+    -ms-border-bottom-left-radius: @radius;
+    -moz-border-bottom-left-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+}
+.border-bottom-right-radius(@radius) {
+    border-bottom-right-radius: @radius;
+    -o-border-bottom-right-radius: @radius;
+    -ms-border-bottom-right-radius: @radius;
+    -moz-border-bottom-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+}
+.transition(@transition) {
+    transition: @transition;
+    -o-transition: @transition;
+    -ms-transition: @transition;
+    -moz-transition: @transition;
+    -webkit-transition: @transition;
+}
+.transition-delay(@transition-delay) {
+    transition-delay: @transition-delay;
+    -o-transition-delay: @transition-delay;
+    -ms-transition-delay: @transition-delay;
+    -moz-transition-delay: @transition-delay;
+    -webkit-transition-delay: @transition-delay;
+}
+.transform(@transform) {
+    transform: @transform;
+    -o-transform: @transform;
+    -ms-transform: @transform;
+    -moz-transform: @transform;
+    -webkit-transform: @transform;
+}
+.box-shadow(@box-shadow) {
+    box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
+    -webkit-box-shadow: @box-shadow;
+}
+.background-clip(@background-clip) {
+    background-clip: @background-clip;
+    -o-background-clip: @background-clip;
+    -ms-background-clip: @background-clip;
+    -moz-background-clip: @background-clip;
+    -webkit-background-clip: @background-clip;
+}
+.mask-image(@mask-image) {
+    mask-image: @mask-image;
+    -o-mask-image: @mask-image;
+    -ms-mask-image: @mask-image;
+    -moz-mask-image: @mask-image;
+    -webkit-mask-image: @mask-image;
+}
+.filter(@filter) {
+    filter: @filter;
+    -o-filter: @filter;
+    -ms-filter: @filter;
+    -moz-filter: @filter;
+    -webkit-filter: @filter;
+}
+.animation(@animation) {
+    animation: @animation;
+    -o-animation: @animation;
+    -ms-animation: @animation;
+    -moz-animation: @animation;
+    -webkit-animation: @animation;
+}
+.placeholder-color(@color) {
+    ::-webkit-input-placeholder {
+        color: @color;
+    }
+    :-moz-placeholder {
+        color: @color;
+    }
+    ::-moz-placeholder {
+        color: @color;
+    }
+    :-ms-input-placeholder {
+        color: @color;
+    }
+}
+.selection(@color, @background) {
+    ::-moz-selection {
+        color: @color;
+        background: @background;
+    }
+    ::selection {
+        color: @color; 
+        background: @background;
+    }
+}
