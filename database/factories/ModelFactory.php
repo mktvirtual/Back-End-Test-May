@@ -29,9 +29,8 @@ $factory->define(User::class, function (Generator $faker) {
 
 $factory->define(Post::class, function (Generator $faker) {
    return [
-       'link' => $faker->imageUrl(),
-       'description' => $faker->realText(),
-       'likes' => $faker->randomNumber(3)
+       'title' => $faker->text(25),
+       'image' => $faker->imageUrl()
    ];
 });
 
