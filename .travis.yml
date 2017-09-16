@@ -1,0 +1,12 @@
+language: php
+php:
+- 5.6
+install:
+- composer install
+deploy:
+  provider: heroku
+  api_key:
+    secure: rxwre55iL9zJU5k0bjnVWU1uWeSDP4VH3s7HD/S96OxnQyUiLIeDoVc5nBdxsFCm/B8kW4lLBeG77RSOKy/Tw0B96yJrF3dzsS2ZLmYoeCGsKNWCPHMsF8QeWv0knEL9F8PH20nrUluyRPfMw2iATmu/d9Jb3QZewTu/CylW2I7VFWPK6WPPHOuTP8Lr1d5CKIfNRwEromRZ8cLqhSKGCvlwNAH+MJTBJPCUkbxYrSXKAhdkLa90VSolCTJzMuqqEy6kIkWwZzXGAPtLYRKXMF69Rms8i3RqQ4U3RaKXhTt7VquNolsa+HK8Qpz4Uk0uytETqCzSmeGUVu7P+36TJBzIErnw1G/1g7gZUfyaWrH465R7rPLOLWq9LCi7mxA8ZLgfvSz4D9/qOUaxoc2jVOUP5nLzacTMW5KrMS4hrgzfXf3OOdEHVeRzVolQcx/z50CBqYPz/5ilN7csN3Q9ReqBYmsFSOBei1J6F4+/aaoxL/pVh2aTRmiMP3plDXjdrdYYg8Y8loxFtGDzjAQIsTXA7TlHnNKnwQSIMDcnybwN3AbmicgtP/zULJgTkH044wkQjiYJd0hDQdVMS8naGcwafRgG17CCnFJgpGN3VVXNHwdgQdmmqRHy21n8rbB0MwXmODXj5v7tVXiKUm/hL6VKQoemvFPYJ9Zx4gC7t7Q=
+  app: peaceful-stream-41663
+  on:
+    repo: danilobezerra/Back-End-Test-May
