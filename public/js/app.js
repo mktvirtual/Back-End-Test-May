@@ -42098,10 +42098,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         uploadImage: function uploadImage(e) {
             var _this = this;
 
-            var uri = '/Back-End-Test-May/public/posts';
             var data = { photo: this.image };
 
-            this.axios.post(uri, data).then(function (response) {
+            this.axios.post('/posts', data).then(function (response) {
                 _this.image = '';
             });
         },
@@ -42249,16 +42248,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchPosts: function fetchPosts() {
             var _this = this;
 
-            var uri = '/Back-End-Test-May/public/posts';
-
-            this.axios.get(uri).then(function (response) {
+            this.axios.get('/posts').then(function (response) {
                 _this.posts = response.data;
             });
         },
         deletePost: function deletePost(id) {
-            var uri = '/Back-End-Test-May/public/posts/' + id;
             this.posts.splice(id, 1);
-            this.axios.delete(uri);
+            this.axios.delete('/posts/' + id);
         }
     }
 });
