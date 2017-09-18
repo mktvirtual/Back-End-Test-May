@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <profile></profile>
+    <upload></upload>
     <photos></photos>
 @endsection

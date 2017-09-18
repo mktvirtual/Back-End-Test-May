@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var isBuffer = __webpack_require__(18);
 
 /*global toString:true*/
@@ -397,10 +397,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(4);
+    adapter = __webpack_require__(5);
   }
   return adapter;
 }
@@ -504,6 +504,12 @@ module.exports = g;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(17);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -519,7 +525,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -530,7 +536,7 @@ var settle = __webpack_require__(22);
 var buildURL = __webpack_require__(24);
 var parseHeaders = __webpack_require__(25);
 var isURLSameOrigin = __webpack_require__(26);
-var createError = __webpack_require__(5);
+var createError = __webpack_require__(6);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
 
 module.exports = function xhrAdapter(config) {
@@ -706,7 +712,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -731,7 +737,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -743,7 +749,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -769,7 +775,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -866,15 +872,15 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(10);
-module.exports = __webpack_require__(43);
+__webpack_require__(11);
+module.exports = __webpack_require__(44);
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -884,9 +890,13 @@ module.exports = __webpack_require__(43);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(11);
+__webpack_require__(12);
 
 window.Vue = __webpack_require__(36);
+
+window.VueAxios = __webpack_require__(37);
+window.axios = __webpack_require__(3);
+Vue.use(VueAxios, axios);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -894,19 +904,19 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('profile', __webpack_require__(37));
-Vue.component('photos', __webpack_require__(40));
+Vue.component('upload', __webpack_require__(38));
+Vue.component('photos', __webpack_require__(41));
 
 var app = new Vue({
   el: '#app'
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(12);
+window._ = __webpack_require__(13);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -915,9 +925,9 @@ window._ = __webpack_require__(12);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(14);
+  window.$ = window.jQuery = __webpack_require__(15);
 
-  __webpack_require__(15);
+  __webpack_require__(16);
 } catch (e) {}
 
 /**
@@ -926,7 +936,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(16);
+window.axios = __webpack_require__(3);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -960,7 +970,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18049,10 +18059,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(13)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(14)(module)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18080,7 +18090,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -28340,7 +28350,7 @@ return jQuery;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /*!
@@ -30723,12 +30733,6 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(17);
-
-/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30736,7 +30740,7 @@ module.exports = __webpack_require__(17);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(3);
+var bind = __webpack_require__(4);
 var Axios = __webpack_require__(19);
 var defaults = __webpack_require__(1);
 
@@ -30771,9 +30775,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(7);
+axios.Cancel = __webpack_require__(8);
 axios.CancelToken = __webpack_require__(34);
-axios.isCancel = __webpack_require__(6);
+axios.isCancel = __webpack_require__(7);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -31123,7 +31127,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(5);
+var createError = __webpack_require__(6);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -31542,7 +31546,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(31);
-var isCancel = __webpack_require__(6);
+var isCancel = __webpack_require__(7);
 var defaults = __webpack_require__(1);
 
 /**
@@ -31695,7 +31699,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(7);
+var Cancel = __webpack_require__(8);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -41990,12 +41994,20 @@ module.exports = Vue$3;
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o};!function(){function o(e,t){if(!o.installed){if(o.installed=!0,!t)return void console.error("You have to install axios");e.axios=t,Object.defineProperties(e.prototype,{axios:{get:function(){return t}},$http:{get:function(){return t}}})}}"object"==( false?"undefined":_typeof(exports))?module.exports=o: true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function(){return o}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):window.Vue&&window.axios&&Vue.use(o,window.axios)}();
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var disposed = false
-var Component = __webpack_require__(8)(
+var Component = __webpack_require__(9)(
   /* script */
-  __webpack_require__(38),
-  /* template */
   __webpack_require__(39),
+  /* template */
+  __webpack_require__(40),
   /* styles */
   null,
   /* scopeId */
@@ -42003,9 +42015,9 @@ var Component = __webpack_require__(8)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/danilobezerra/Sites/Back-End-Test-May/resources/assets/js/components/Profile.vue"
+Component.options.__file = "/Users/danilobezerra/Sites/Back-End-Test-May/resources/assets/js/components/Upload.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Profile.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] Upload.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -42014,9 +42026,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b9464b22", Component.options)
+    hotAPI.createRecord("data-v-0f262fab", Component.options)
   } else {
-    hotAPI.reload("data-v-b9464b22", Component.options)
+    hotAPI.reload("data-v-0f262fab", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42027,7 +42039,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42048,20 +42060,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            message: 'I\'m an example component!'
+            image: ''
         };
     },
-    mounted: function mounted() {
-        console.log('Component mounted.');
+
+    methods: {
+        onFileChange: function onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+            this.createImage(files[0]);
+        },
+        createImage: function createImage(file) {
+            var image = new Image();
+            var reader = new FileReader();
+            var vm = this;
+
+            reader.onload = function (e) {
+                vm.image = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        },
+        uploadImage: function uploadImage(e) {
+            var _this = this;
+
+            var uri = '/Back-End-Test-May/public/posts';
+            var data = { photo: this.image };
+
+            this.axios.post(uri, data).then(function (response) {
+                _this.image = '';
+            });
+        },
+        removeImage: function removeImage(e) {
+            this.image = '';
+        }
     }
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42075,28 +42126,56 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("Perfil")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Selecione uma foto")]), _vm._v(" "), _c('div', {
     staticClass: "panel-body"
-  }, [_vm._v("\n                    " + _vm._s(_vm.message) + "\n                ")])])])])])
+  }, [(!_vm.image) ? _c('div', [_c('input', {
+    attrs: {
+      "type": "file",
+      "accept": "image/*"
+    },
+    on: {
+      "change": _vm.onFileChange
+    }
+  })]) : _c('div', [_c('img', {
+    staticStyle: {
+      "width": "100%",
+      "margin": "auto",
+      "display": "block",
+      "margin-bottom": "20px"
+    },
+    attrs: {
+      "src": _vm.image
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-success",
+    on: {
+      "click": _vm.uploadImage
+    }
+  }, [_vm._v("\n                            Salvar foto\n                        ")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    on: {
+      "click": _vm.removeImage
+    }
+  }, [_vm._v("\n                            Remover foto\n                        ")])])])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-b9464b22", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0f262fab", module.exports)
   }
 }
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(8)(
+var Component = __webpack_require__(9)(
   /* script */
-  __webpack_require__(41),
-  /* template */
   __webpack_require__(42),
+  /* template */
+  __webpack_require__(43),
   /* styles */
   null,
   /* scopeId */
@@ -42128,7 +42207,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42149,20 +42228,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            message: 'I\'m an example component!'
+            posts: []
         };
     },
-    mounted: function mounted() {
-        console.log('Component mounted.');
+
+    created: function created() {
+        this.fetchPosts();
+    },
+    methods: {
+        fetchPosts: function fetchPosts() {
+            var _this = this;
+
+            var uri = '/Back-End-Test-May/public/posts';
+
+            this.axios.get(uri).then(function (response) {
+                _this.posts = response.data;
+            });
+        },
+        deletePost: function deletePost(id) {
+            var uri = '/Back-End-Test-May/public/posts/' + id;
+            this.posts.splice(id, 1);
+            this.axios.delete(uri);
+        }
     }
 });
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -42176,9 +42278,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel panel-default"
   }, [_c('div', {
     staticClass: "panel-heading"
-  }, [_vm._v("Fotos")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Minhas fotos")]), _vm._v(" "), _c('div', {
     staticClass: "panel-body"
-  }, [_vm._v("\n                    " + _vm._s(_vm.message) + "\n                ")])])])])])
+  }, [_c('div', {
+    staticClass: "row text-center text-lg-left"
+  }, _vm._l((_vm.posts), function(post) {
+    return _c('div', {
+      staticClass: "col-lg-3 col-md-4 col-xs-6"
+    }, [_c('a', {
+      staticClass: "d-block mb-4 h-100",
+      attrs: {
+        "href": post.image
+      }
+    }, [_c('img', {
+      staticClass: "img-fluid img-thumbnail",
+      attrs: {
+        "src": post.image,
+        "alt": post.title
+      }
+    })])])
+  }))])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -42189,10 +42308,10 @@ if (false) {
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Missing binding /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/node-sass/vendor/darwin-x64-48/binding.node\nNode Sass could not find a binding for your current environment: OS X 64-bit with Node.js 6.x\n\nFound bindings for the following environments:\n  - Linux 64-bit with Node.js 6.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at Object.<anonymous> (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:570:32)\n    at Object.Module._extensions..js (module.js:579:10)\n    at Module.load (module.js:487:32)\n    at tryModuleLoad (module.js:446:12)\n    at Function.Module._load (module.js:438:3)\n    at Module.require (module.js:497:17)\n    at require (internal/module.js:20:19)\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/Compilation.js:149:10)\n    at moduleFactory.create (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/Compilation.js:447:10)\n    at factory (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /Users/danilobezerra/Sites/Back-End-Test-May/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/Users/danilobezerra/Sites/Back-End-Test-May/node_modules/webpack/lib/NormalModuleFactory.js:194:7)\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

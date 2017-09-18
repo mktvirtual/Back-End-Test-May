@@ -3,10 +3,16 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example</div>
+                    <div class="panel-heading">Minhas fotos</div>
 
                     <div class="panel-body">
-                        {{ message }}
+                        <div class="row text-center text-lg-left">
+                            <div class="col-lg-3 col-md-4 col-xs-6" v-for="post in posts">
+                                <a :href="post.image" class="d-block mb-4 h-100">
+                                    <img class="img-fluid img-thumbnail" :src="post.image" :alt="post.title">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -18,11 +24,23 @@
     export default {
         data() {
             return {
-                message: 'I\'m an example component!'
+                posts: []
             }
         },
-        mounted() {
-            console.log('Component mounted.')
+        created: function() {
+            this.fetchPosts();
+        },
+        methods: {
+            fetchPosts() {
+                this.axios.get('/posts').then((response) => {
+                    this.posts = response.data;
+                });
+            },
+            deletePost(id)
+            {
+                this.posts.splice(id, 1);
+                this.axios.delete(`/posts/${id}`);
+            }
         }
     }
 </script>
