@@ -13,10 +13,11 @@
 use App\Post;
 
 Route::get('/', function() {
-    $posts = Post::latest()->limit(7)->get();
-    return view('welcome', ['posts' => $posts]);
+    $posts = Post::latest()->limit(6);
+    return view('welcome', ['posts' => $posts->get()]);
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/posts', 'PostController');
