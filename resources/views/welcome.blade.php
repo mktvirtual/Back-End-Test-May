@@ -20,10 +20,10 @@
 
         @if (Route::has('login'))
             <p class="page-description text-center">@if (Auth::check())
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/home') }}">Início</a>
                 @else
                     <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
+                    <a href="{{ url('/register') }}">Cadastrar</a>
                 @endif</p>
         @endif
 
