@@ -14,6 +14,7 @@
 use Faker\Generator;
 use App\User;
 use App\Post;
+use Intervention\Image\Facades\Image;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(User::class, function (Generator $faker) {
@@ -28,9 +29,15 @@ $factory->define(User::class, function (Generator $faker) {
 });
 
 $factory->define(Post::class, function (Generator $faker) {
-   return [
-       'title' => $faker->text(25),
-       'image' => $faker->imageUrl()
-   ];
+    $photo = Image::make($faker->imageUrl())->encode('jpg');
+    $hash = md5($photo->__toString());
+    $title = "{$hash}.jpg";
+
+    Storage::disk('public')->put($title, $photo->stream('jpg'));
+
+    return [
+        'title' => $title,
+        'image' => Storage::disk('public')->url($title)
+    ];
 });
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -37,21 +36,21 @@ class PostController extends Controller
         $photo = Image::make($contents);
         $photo->resize(640, 480, function ($constraint) {
             $constraint->aspectRatio();
-        })->encode('jpg');
+        });
 
         $hash = md5($photo->__toString());
         $title = "{$hash}.jpg";
-        $path = 'storage/' . $title;
-        $photo->save(public_path($path));
+
+        Storage::disk('public')->put($title, $photo->stream('jpg'));
 
         $post = new Post([
             'user_id' => $request->user()->id,
-            'image' => Config::get('app.url') . $path,
+            'image' => Storage::disk('public')->url($title),
             'title' => $title
         ]);
         $post->save();
 
-        return response()->json('Salvo com sucesso');
+        return response()->json($post);
     }
 
     /**
@@ -63,7 +62,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
-        Storage::delete($post->title);
+        Storage::disk('public')->delete($post->title);
 
         $post->delete();
         return response()->json('Exculído com sucesso');
